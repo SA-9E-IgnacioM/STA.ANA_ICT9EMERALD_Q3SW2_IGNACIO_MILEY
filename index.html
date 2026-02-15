@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Q3 Seatwork 2</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+summary{
+  background-color: pink;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+}
+
+.row div {
+  flex: 1;
+}
+
+#brands{
+  width: 860px;
+  background-color: rgba(255, 192, 203, 0.5);
+  height: 200px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+body{
+  font-family: Gill Sans MT;
+  background-color: #ffe6f2;
+}
+
+/* Pink Gradient Navbar */
+.navbar{
+  background-image: linear-gradient(to right, #ffb6d9, #ff69b4);
+}
+
+h1{
+  color: white;
+  text-shadow: 2px 2px #c94f9d;
+}
+
+#buttons, #brand_btn{
+  color: white;
+  background-color: #161f36;
+  border: 3px solid gray;
+  border-radius: 20px;
+  width: 300px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#brand_btn{
+  font-size: 15px;
+  background-image: linear-gradient(to right, black, #161f36);
+}
+
+#budget{
+  text-align: center;
+  font-size: 25px;
+  color: #072f70;
+}
+
+.footer {
+  margin-top: 10%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+b{
+  background-color: gray;
+}
+
+a.store-link{
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.store-link:hover{
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="font-size: 20px; color: white;">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="font-size: 20px; color: white;">Locate</a>
+      </li>
+    </ul>
+
+    <center>
+      <h1>Product Locator</h1>
+    </center>
+
+    <form class="d-flex">
+      <input class="form-control me-2" type="text" placeholder="Search">
+      <button class="btn btn-light" type="button">Search</button>
+    </form>
+
+  </div>
+</nav>
+
+<br>
+
+<center>
+<div id="brands">
+  <form>
+    <h3>
+      Want to start your photography journey?
+      <br>
+      Enter your budget and let's find the right one for you!
+    </h3>
+
+    <input type="text" class="form-control" id="budget" placeholder="Enter here...">
+  </form>
+</div>
+</center>
+
+<br>
+
+<div class="container">
+  <div class="row">
+
+    <div>
+      <button id="buttons" class="btn" onclick="showBrand()">
+        Brand & Discounts
+      </button>
+      <div id="brand"></div>
+    </div>
+
+    <div>
+      <button id="buttons" class="btn" onclick="showStore()">
+        Store Location
+      </button>
+      <div id="stores"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+function showBrand(){
+  let budget = Number(document.getElementById('budget').value);
+  let disc = budget * 0.20;
+  let finalPrice = disc.toFixed(2);
+
+  document.getElementById("brand").innerHTML =
+  "<br><b style='color: white;'>Recommended Stores:<br>" +
+  "<button id='brand_btn' class='btn'>Henry Cams</button><br>" +
+  "<button id='brand_btn' class='btn'>Camera Haus</button><br>" +
+  "<button id='brand_btn' class='btn'>JG Superstore</button><br>" +
+  "<button id='brand_btn' class='btn'>Digicamsbynami</button><br>" +
+  "<button id='brand_btn' class='btn'>digicamsbykazel</button><br>" +
+  "<br><br>You are eligible for: " +
+  "<span style='color: red;'><kbd style='font-size: 25px;'>" +
+  finalPrice +
+  "</kbd></span> discount.</b>";
+}
+
+function showStore(){
+  document.getElementById("stores").innerHTML =
+  "<br><b style='color: white;'>Store Locators:<br><br>" +
+
+  "Henry Cams:<br>" +
+  "<a class='store-link' href='https://share.google/jWKiJLpriBYP8zKeN' target='_blank'>Open in Google Maps</a><br><br>" +
+
+  "Camera Haus:<br>" +
+  "<a class='store-link' href='https://share.google/7jbUUG9kxkqE2PmoH' target='_blank'>Open in Google Maps</a><br><br>" +
+
+  "JG Superstore:<br>" +
+  "<a class='store-link' href='https://share.google/NVt8bZAIXIxfMltvU' target='_blank'>Open in Google Maps</a>" +
+
+ "Digicamsbynami":<br>" +
+  "<a class='store-link' href='https://share.google/qlDrujMvnyT0VfoZa' target='_blank'>Open in Google Maps</a>" +
+  
+  "</b>";
+}
+
+</script>
+
+<div class="footer">
+  <hr style="color:white;">
+  <center>&copy; <label style="color:white;">Student Name</label></center>
+</div>
+
+</body>
+</html>
